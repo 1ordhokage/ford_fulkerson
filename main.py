@@ -1,19 +1,5 @@
 import time
 import numpy as np
-from functools import wraps
-
-
-def measure_time(func):
-    """Декоратор для засечения времени исполнения функции"""
-    @wraps(func)
-    def wrap(*args, **kwargs):
-        start = time.perf_counter()
-        result = func(*args, **kwargs)
-        elapsed = time.perf_counter() - start
-        print(f"Затрачено на исполнение: {1000 * elapsed:0.7f} мс\n\n")
-        return result
-
-    return wrap
 
 
 class Graph:
